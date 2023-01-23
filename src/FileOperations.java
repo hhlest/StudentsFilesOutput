@@ -13,14 +13,6 @@ public class FileOperations implements FilePathConstants {
         pw.close();
     }
 
-    public static void createInputFile(Group g) throws IOException {
-        FileWriter f1 = new FileWriter(INPUT_FILE_PATH, true);
-        PrintWriter pw = new PrintWriter(f1);
-        pw.println(g);
-        pw.flush();
-        pw.close();
-    }
-
     public static void saveToFile(Group g) {
         try {
             FileOperations.createOutputFile(g);
