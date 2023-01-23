@@ -20,7 +20,7 @@ public class Input implements FilePathConstants {
 
             System.out.println("Save to file? Y/N:");
             if (sc.next().equalsIgnoreCase("Y")) {
-                FileOperations.saveToFile(g);
+                FileOperator.createOutputFile(g);
                 break;
             }
         }
