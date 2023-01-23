@@ -10,6 +10,7 @@ public class FileOperations implements FilePathConstants {
         PrintWriter pw = new PrintWriter(f1);
         pw.println(g);
         pw.flush();
+        pw.close();
     }
 
     public static void createInputFile(Group g) throws IOException {
@@ -17,6 +18,7 @@ public class FileOperations implements FilePathConstants {
         PrintWriter pw = new PrintWriter(f1);
         pw.println(g);
         pw.flush();
+        pw.close();
     }
 
     public static void saveToFile(Group g) {
