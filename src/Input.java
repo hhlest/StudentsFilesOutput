@@ -26,7 +26,6 @@ public class Input implements FilePathConstants {
         }
     }
 
-
     public static Student readInputAndCreateStudent(Group g) {
         Scanner sc = new Scanner(System.in);
 
@@ -54,38 +53,4 @@ public class Input implements FilePathConstants {
         }
         return new Student(name, lastName, gender, ID, g.getGroupName());
     }
-
-
-    public static Group readInputFile() throws FileNotFoundException {
-        Group groupFromFile = new Group();
-        FileReader fr = new FileReader(INPUT_FILE_PATH);
-        try (BufferedReader br = new BufferedReader(fr)) {
-            Gender gender = null;
-            String strLine;
-            while ((strLine = br.readLine()) != null) {
-                String[] result = strLine.split(" ");
-
-                String name = result[0];
-                String lastName = result[1];
-                if (result[2].equalsIgnoreCase("M")) {
-                    gender = Gender.M;
-                } else if (result[2].equalsIgnoreCase("F")) {
-                    gender = Gender.F;
-                } else {
-                    gender = null;
-                }
-
-                int ID = Integer.parseInt(result[3]);
-                String group = result[4];
-
-                groupFromFile.setGroupName(result[4]);
-                groupFromFile.addStudent(new Student(name, lastName, gender, ID, group));
-            }
-
-        } catch (IOException | GroupOverflowException e) {
-            e.printStackTrace();
-        }
-        return groupFromFile;
-    }
-
 }
