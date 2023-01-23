@@ -12,7 +12,7 @@ public class FileOperator implements FilePathConstants {
             System.out.println("File successfully created:\n" + OUTPUT_FILE_PATH);
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("The file was not saved. \nCheck OUTPUT_FILE_PATH in constants.");
+            System.out.println("The file was not saved.\nCheck OUTPUT_FILE_PATH in constants.");
         }
     }
 }
